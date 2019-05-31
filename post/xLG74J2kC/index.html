@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sanmu</title>
+<title>关于我 | Sanmu</title>
 <link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1559302601065">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -83,56 +83,56 @@
   </div>
 </div>
 
-    
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于我
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-05-31 ·
+              </time>
+              
+            </div>
+            
+            <div class="post-content">
+              <center>这个🐒很懒，啥也没有留下</canter>
+<center>![](https://sanmusir.github.io//post-images/1559302596000.jpeg)</canter>
+            </div>
+          </article>
+        </div>
+
         
 
-<div class="archives-container">
-  
-    <h2 class="year">2019</h2>
-    
-      
-        <article class="post">
-          <a href="https://sanmusir.github.io//post/blockchain">
-            <h2 class="post-title">
-              带着小白了解下区块链技术
-              <small>2019-05-31</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://sanmusir.github.io//post/linux-command">
-            <h2 class="post-title">
-              Linux 指令大全
-              <small>2019-05-31</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://sanmusir.github.io//post/laravel-excel">
-            <h2 class="post-title">
-              Laravel Excel 基础使用
-              <small>2019-05-31</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
-</div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-    
-        <div class="pagination-container">
-  
-  
-</div>
+<div id="gitalk-container"></div>
 
-    
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '88f87c3faea053b3ce07',
+    clientSecret: '11c8cff739a25a6a99fe78bfa3681b1c70c92199',
+    repo: 'sanmusir.github.io',
+    owner: 'sanmusir',
+    admin: ['sanmusir'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
         <div class="site-footer">
   到底了，别拉了！ | 
   <a class="rss" href="https://sanmusir.github.io//atom.xml" target="_blank">RSS</a>
