@@ -1,0 +1,774 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Linux 指令大全 | Sanmu</title>
+<link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1559297284471">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sanmusir.github.io//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sanmusir.github.io/">
+  <img class="avatar" src="https://sanmusir.github.io//images/avatar.png?v=1559297284471" alt="">
+  </a>
+  <h1 class="site-title">
+    Sanmu
+  </h1>
+  <p class="site-description">
+    早起的虫儿被鸟吃
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/sanmusir" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Linux 指令大全
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-05-31 ·
+              </time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://images.unsplash.com/photo-1544256718-3bcf237f3974?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1502&amp;q=80')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="前言">前言</h2>
+<p>本文收录了linux常用指令，这里面有个小技巧，基本上所有指令后面跟上 --h 可以显示其使用方法。故不必死记硬背，知其意乃通其形。</p>
+<p>分类如下：</p>
+<ul>
+<li>文件&amp;目录操作（16个）</li>
+<li>查看文件&amp;内容处理（18个）</li>
+<li>文件压缩&amp;解压缩（3个）</li>
+<li>信息显示（11个）</li>
+<li>搜索文件（4个）</li>
+<li>进程管理（11个）</li>
+<li>用户管理（7个）</li>
+<li>网络操作（11个）</li>
+<li>磁盘&amp;文件系统（7个）</li>
+<li>系统权限（3个）</li>
+<li>关机重启（5个）</li>
+<li>其他（6个）</li>
+</ul>
+<h2 id="文件目录操作16个">文件&amp;目录操作（16个）</h2>
+<h4 id="ls">ls</h4>
+<ul>
+<li>ls -a   查看所有文件，包含隐藏文件</li>
+<li>ls -l   简写 ll，查看详细信息</li>
+<li>ls -h   文件大小以易读的方式显示</li>
+</ul>
+<h4 id="cd">cd</h4>
+<ul>
+<li>cd ../  返回上级目录</li>
+<li>cd ~    前往家目录</li>
+<li>cd -    返回上一次所在目录</li>
+</ul>
+<h4 id="cp">cp</h4>
+<ul>
+<li>cp -r   复制目录及目录下文件</li>
+</ul>
+<h4 id="find">find</h4>
+<ul>
+<li>find / -name 'target' 查询根目录下面文件名为 target 的文件</li>
+</ul>
+<h4 id="mkdir">mkdir</h4>
+<ul>
+<li>mkdir -p /tmp/test 递归创建目录</li>
+</ul>
+<h4 id="mv">mv</h4>
+<ul>
+<li>mv -f source destination 强制</li>
+</ul>
+<h4 id="pwd">pwd</h4>
+<ul>
+<li>pwd 显示当前路径</li>
+</ul>
+<h4 id="rm">rm</h4>
+<ul>
+<li>rm -rf / 强制删除根目录及目录下的文件，就是我们通常所说的删库跑路</li>
+</ul>
+<h4 id="touch">touch</h4>
+<ul>
+<li>touch target 创建target文件，若文件存在则改变文件时间戳</li>
+</ul>
+<h4 id="tree">tree</h4>
+<ul>
+<li>tree 功能是以树形结构显示目录下的内容</li>
+</ul>
+<h4 id="basename">basename</h4>
+<ul>
+<li>basename /tmp/1 显示文件名</li>
+</ul>
+<h4 id="dirname">dirname</h4>
+<ul>
+<li>dirname /tmp/1 显示路径</li>
+</ul>
+<h4 id="chattr">chattr</h4>
+<ul>
+<li>chattr +i /tmp/1 加i属性，防止文件被修改</li>
+</ul>
+<h4 id="lsattr">lsattr</h4>
+<ul>
+<li>lsattr /tmp/1 查看文件的扩展属性</li>
+</ul>
+<h4 id="file">file</h4>
+<ul>
+<li>file /tmp/1 显示文件类型</li>
+</ul>
+<h4 id="md5">md5</h4>
+<ul>
+<li>md5 /tmp/1 显示文件MD5值</li>
+</ul>
+<h2 id="查看文件内容处理18个">查看文件&amp;内容处理（18个）</h2>
+<h4 id="cat">cat</h4>
+<ul>
+<li>cat  -n 显示行号</li>
+<li>cat file1 file2 打开文件1和2</li>
+</ul>
+<h4 id="more">more</h4>
+<ul>
+<li>more file1 逐页显示</li>
+</ul>
+<h4 id="less">less</h4>
+<ul>
+<li>less file1 也是逐页显示，与more方向相反</li>
+</ul>
+<h4 id="head">head</h4>
+<ul>
+<li>head -n file 显示文件头n行</li>
+</ul>
+<h4 id="tail">tail</h4>
+<ul>
+<li>tail -n file 显示文件尾n行</li>
+<li>tailf file 实时显示文件尾10行，常用于跟踪日志信息</li>
+</ul>
+<h4 id="cut">cut</h4>
+<ul>
+<li>who|cut -b 1-3,5 输出每行的1至3个字节和第5个字节</li>
+<li>who|cut -c -3 输出每行的1至3个字符</li>
+<li>who|cut -c 3- 输出每行的第3个字符到行尾</li>
+<li>who|cut -d ' ' -f 1 以空格为分隔符，输出第一个域</li>
+</ul>
+<h4 id="split">split</h4>
+<ul>
+<li>split -b 10k date.file 将文件分割为10k的多个子文件</li>
+<li>split -b 10k date.file split_file 指定子文件前缀为split_file</li>
+</ul>
+<h4 id="paste">paste</h4>
+<ul>
+<li>psate file1 file2 file3 将3个文件按列合并</li>
+</ul>
+<h4 id="sort">sort</h4>
+<ul>
+<li>sort -n 按照数值大小排序</li>
+<li>sort -r 倒序排序</li>
+<li>sort -t 指定分隔符</li>
+<li>sort -u 忽略相同行</li>
+</ul>
+<h4 id="uniq">uniq</h4>
+<ul>
+<li>uniq -c 显示出现次数，只有相邻的才算重复</li>
+<li>uniq -d 只显示重复的行</li>
+<li>unqi -u 只显示不重复的行</li>
+</ul>
+<h4 id="wc">wc</h4>
+<ul>
+<li>wc -l 显示列数</li>
+</ul>
+<h4 id="diff">diff</h4>
+<ul>
+<li>diff file1 file2 比较两个文件差异</li>
+</ul>
+<h4 id="rev">rev</h4>
+<ul>
+<li>rev file 反向输出文件内容</li>
+</ul>
+<h4 id="grep">grep</h4>
+<ul>
+<li>grep 'target' file 过滤输出文件中包含target的行</li>
+<li>grep -v 'target' file 过滤输出文件中不包含target的行</li>
+<li>grep -c 'target' file 过滤输出文件中包含target的行数</li>
+<li>grep -i 'target' file 忽略大小写</li>
+<li>egrep '[1-9]|a' file 过滤输出正则匹配到的行</li>
+<li>seq 10 | grep &quot;5&quot; -A 3 显示匹配某个结果之后的3行</li>
+<li>seq 10 | grep &quot;5&quot; -B 3 显示匹配某个结果之前的3行</li>
+<li>seq 10 | grep &quot;5&quot; -C 3 显示匹配某个结果的前三行和后三行</li>
+</ul>
+<h4 id="join">join</h4>
+<ul>
+<li>join file1 file2 将两个文件中，指定栏位内容相同的行连接起来</li>
+</ul>
+<h4 id="tr">tr</h4>
+<ul>
+<li>cat text | tr '\t' ' ' 将制表符替换成空格</li>
+</ul>
+<h4 id="vim">vim</h4>
+<h6 id="三种模式">三种模式：</h6>
+<ul>
+<li>编辑模式（命令模式）</li>
+<li>输入模式</li>
+<li>末行模式</li>
+</ul>
+<h6 id="模式的转换">模式的转换</h6>
+<p>编辑-&gt;输入</p>
+<pre><code>    i: 在当前光标所在字符的前面，转为输入模式；
+
+    a: 在当前光标所在字符的后面，转为输入模式；
+
+    o: 在当前光标所在行的下方，新建一行，并转为输入模式；
+
+    I：在当前光标所在行的行首，转换为输入模式
+
+    A：在当前光标所在行的行尾，转换为输入模式
+
+    O：在当前光标所在行的上方，新建一行，并转为输入模式；
+</code></pre>
+<p>输入-&gt;编辑</p>
+<pre><code>    ESC
+</code></pre>
+<p>编辑-&gt;末行：</p>
+<pre><code>    :
+</code></pre>
+<p>末行-&gt;编辑：</p>
+<pre><code>    ESC,ESC
+</code></pre>
+<h6 id="打开文件">打开文件</h6>
+<pre><code>    vim +# :打开文件，并定位于第#行
+
+    vim +：打开文件，定位至最后一行
+
+    vim +/PATTERN : 打开文件，定位至第一次被PATTERN匹配到的行的行首
+</code></pre>
+<h6 id="关闭文件">关闭文件</h6>
+<pre><code>    :q  退出
+
+    :wq 保存并退出
+
+    :q! 不保存并退出
+
+    :w 保存
+
+    :w! 强行保存
+</code></pre>
+<h6 id="移动光标编辑模式">移动光标（编辑模式）</h6>
+<ul>
+<li>逐字符移动</li>
+</ul>
+<pre><code>    h: 左
+
+    l: 右
+
+    j: 下
+
+    k: 上
+
+    #h: 移动#个字符
+</code></pre>
+<ul>
+<li>以单词为单位移动</li>
+</ul>
+<pre><code>    w: 移至下一个单词的词首
+
+    e: 跳至当前或下一个单词的词尾
+
+    b: 跳至当前或前一个单词的词首
+
+    #w: 移动#个单词
+</code></pre>
+<ul>
+<li>行内跳转</li>
+</ul>
+<pre><code>    0: 绝对行首
+
+    ^: 行首的第一个非空白字符
+
+    $: 绝对行尾
+</code></pre>
+<ul>
+<li>行间跳转</li>
+</ul>
+<pre><code>    #G：跳转至第#行
+
+    gg: 第一行
+
+    G：最后一行
+</code></pre>
+<h6 id="翻屏">翻屏</h6>
+<pre><code>    Ctrl+f: 向下翻一屏
+
+    Ctrl+b: 向上翻一屏
+
+    Ctrl+d: 向下翻半屏
+
+    Ctrl+u: 向上翻半屏
+</code></pre>
+<h6 id="删除单个字符">删除单个字符</h6>
+<pre><code>    x: 删除光标所在处的单个字符
+
+    #x: 删除光标所在处及向后的共#个字符
+</code></pre>
+<h6 id="删除命令-d">删除命令: d</h6>
+<pre><code>    dd: 删除当前光标所在行
+    #dd: 删除包括当前光标所在行在内的#行；
+</code></pre>
+<h6 id="撤消编辑操作">撤消编辑操作</h6>
+<pre><code>    u：撤消前一次的编辑操作
+
+    #u: 直接撤消最近#次编辑操作
+
+    连续u命令可撤消此前的n次编辑操作
+
+    撤消最近一次撤消操作：Ctrl+r
+</code></pre>
+<h6 id="查找">查找</h6>
+<pre><code>    /PATTERN
+
+    ?PATTERN
+
+    n 下一个
+
+    N 上一个
+</code></pre>
+<h2 id="文件压缩解压缩3个">文件压缩&amp;解压缩（3个）</h2>
+<h4 id="tar">tar</h4>
+<ul>
+<li>tar zxvf FileName.tar.gz 解压</li>
+<li>tar zcvf FileName.tar.gz DirName 压缩</li>
+</ul>
+<h4 id="zip">zip</h4>
+<ul>
+<li>zip -r html.zip /home/html 递归压缩</li>
+</ul>
+<h4 id="unzip">unzip</h4>
+<p>unzip test.zip -d /tmp 解压到指定目录下</p>
+<h2 id="信息显示11个">信息显示（11个）</h2>
+<h4 id="uname">uname</h4>
+<ul>
+<li>uanme -a 显示系统全部信息</li>
+</ul>
+<h4 id="hostname">hostname</h4>
+<ul>
+<li>hostname 显示主机名</li>
+</ul>
+<h4 id="dmesg">dmesg</h4>
+<ul>
+<li>dmesg 显示开机信息</li>
+</ul>
+<h4 id="uptime">uptime</h4>
+<ul>
+<li>uptime 显示系统运行时间及负载</li>
+</ul>
+<h4 id="stat">stat</h4>
+<ul>
+<li>stat 显示文件的状态信息</li>
+</ul>
+<h4 id="du">du</h4>
+<ul>
+<li>du -sh  显示路径下所有文件大小</li>
+<li>du -sh local 显示路径下local目录文件大小</li>
+<li>du -sh * 显示路径下所有目录文件大小</li>
+</ul>
+<h4 id="df">df</h4>
+<ul>
+<li>df -h 显示系统磁盘空间的使用情况</li>
+</ul>
+<h4 id="top">top</h4>
+<ul>
+<li>top 实时显示系统资源使用情况</li>
+</ul>
+<h4 id="free">free</h4>
+<ul>
+<li>free -m 以M为单位查看系统内存</li>
+</ul>
+<h4 id="date">date</h4>
+<ul>
+<li>date +&quot;%Y-%m-%d&quot; 2019-05-28</li>
+<li>date -d &quot;1 day ago&quot; +&quot;%Y-%m-%d&quot; 输出昨天日期</li>
+<li>date -d &quot;+1 day&quot; +%Y%m%d       显示前一天的日期</li>
+<li>date -d &quot;-1 day&quot; +%Y%m%d       显示后一天的日期</li>
+<li>date -d &quot;-1 month&quot; +%Y%m%d     显示上一月的日期</li>
+<li>date -d &quot;+1 month&quot; +%Y%m%d     显示下一月的日期</li>
+<li>date -d &quot;-1 year&quot; +%Y%m%d      显示前一年的日期</li>
+<li>date -d &quot;+1 year&quot; +%Y%m%d      显示下一年的日期</li>
+</ul>
+<h4 id="cal">cal</h4>
+<ul>
+<li>cal 日历信息</li>
+</ul>
+<h2 id="搜索文件4个">搜索文件（4个）</h2>
+<h4 id="which">which</h4>
+<ul>
+<li>which pwd 显示命令路径</li>
+</ul>
+<h4 id="find-2">find</h4>
+<ul>
+<li>find / -name 'target' 查询根目录下面文件名为 target 的文件</li>
+</ul>
+<h4 id="whereis">whereis</h4>
+<ul>
+<li>whereis php 查找二进制命令</li>
+</ul>
+<h4 id="locate">locate</h4>
+<ul>
+<li>locate target 从数据库 (/var/lib/mlocate/mlocate.db) 查找目标文件，使用updatedb更新库</li>
+</ul>
+<h2 id="进程管理11个">进程管理（11个）</h2>
+<h4 id="jobs">jobs</h4>
+<ul>
+<li>jobs 查看当前有多少在后台运行的命令</li>
+</ul>
+<h4 id="bg">bg</h4>
+<ul>
+<li>bg 1 将一个在后台暂停的命令，继续执行，1为作业号
+（ctrl+z）可以挂起程序，返回作业号</li>
+</ul>
+<h4 id="fg">fg</h4>
+<ul>
+<li>fg 1 将后台中的命令调至前台继续运行 ，1为作业号</li>
+</ul>
+<h4 id="kill">kill</h4>
+<ul>
+<li>kill 进程号 杀进程</li>
+<li>kill -9 进程号 强杀进程</li>
+</ul>
+<h4 id="killall">killall</h4>
+<ul>
+<li>killall php 通过进程名字杀进程</li>
+<li>killall -9 php 通过进程名字强杀进程</li>
+</ul>
+<h4 id="pkill">pkill</h4>
+<ul>
+<li>用法同上</li>
+</ul>
+<h4 id="crontab">crontab</h4>
+<ul>
+<li>crontab -l 查看定时任务</li>
+<li>crontab -e 编辑定时任务</li>
+<li>crontab -l -u user1 查看user1定时任务，只有root才有权限</li>
+<li>crontab -e -u user1 编辑user1定时任务，只有root才有权限</li>
+</ul>
+<h4 id="ps">ps</h4>
+<ul>
+<li>ps -ef 查看进程，显示UID,PPIP,C与STIME，每个程序所使用的环境变量栏位</li>
+<li>ps -axu 查看所有进程，并显示属于用户</li>
+</ul>
+<h4 id="pstree">pstree</h4>
+<ul>
+<li>pstree -p 显示当前所有进程的进程号和进程id树</li>
+<li>pstree -a 显示所有进程的所有详细信息树</li>
+</ul>
+<h4 id="nohup">nohup</h4>
+<ul>
+<li>nohup command &amp; 退出账户时不挂断程序，仍在后台运行</li>
+</ul>
+<h4 id="pgrep">pgrep</h4>
+<ul>
+<li>pgrep -l httpd 查找http相关的进程号</li>
+</ul>
+<h2 id="用户管理7个">用户管理（7个）</h2>
+<h4 id="useradd">useradd</h4>
+<ul>
+<li>useradd boy -u 888 建立一个新用户账户，并设置ID</li>
+<li>useradd –g sales jack –G company,employees<br>
+-g：加入主要组 -G：加入次要组</li>
+</ul>
+<h4 id="usermod">usermod</h4>
+<ul>
+<li>usermod -G staff newuser2 将newuser2添加到组staff中</li>
+<li>usermod -l newuser1 newuser 修改newuser的用户名为newuser1</li>
+<li>usermod -L newuser1 锁定账号newuser1</li>
+<li>usermod -U newuser1 解除对newuser1的锁定</li>
+</ul>
+<h4 id="userdel">userdel</h4>
+<ul>
+<li>userdel -f user1 强制删除用户</li>
+<li>userdel -r user1 删除用户的同时，删除与用户相关的所有文件</li>
+</ul>
+<h4 id="groupadd">groupadd</h4>
+<ul>
+<li>groupadd -g 1000 group1 建立一个新组，并设置组ID加入系统</li>
+</ul>
+<h4 id="passwd">passwd</h4>
+<ul>
+<li>passwd user1 修改user1密码</li>
+<li>passwd -l user1 锁住密码</li>
+<li>passwd -d user1 删除密码</li>
+</ul>
+<h4 id="su">su</h4>
+<ul>
+<li>su root 切换身份</li>
+</ul>
+<h4 id="sudo">sudo</h4>
+<ul>
+<li>sudo command 已管理员身份运行命令</li>
+</ul>
+<h2 id="网络操作11个">网络操作（11个）</h2>
+<h4 id="telnet">telnet</h4>
+<ul>
+<li>telnet 127.0.0.1 登录远程主机</li>
+</ul>
+<h4 id="ssh">ssh</h4>
+<ul>
+<li>ssh root@127.0.0.1 -p22  登录远程主机</li>
+</ul>
+<h4 id="scp">scp</h4>
+<ul>
+<li>scp local_file remote_username@remote_ip:remote_folder  本地拷贝到远程</li>
+<li>scp remote_username@remote_ip:remote_folder local_file 远程拷贝到本地</li>
+</ul>
+<h4 id="wget">wget</h4>
+<ul>
+<li>wget url 下载一个文件</li>
+<li>wget --limit-rate=300k url 限速下载</li>
+<li>wget -c url 断点续传</li>
+<li>wget -b url 后台下载</li>
+</ul>
+<h4 id="ping">ping</h4>
+<ul>
+<li>ping www.baidu.com -c 2 收到两个包就结束</li>
+</ul>
+<h4 id="route">route</h4>
+<ul>
+<li>route 显示当前路由</li>
+</ul>
+<h4 id="ifconfig">ifconfig</h4>
+<ul>
+<li>ifconfig 查看、配置、启用或禁用网络接口</li>
+</ul>
+<h4 id="ifup">ifup</h4>
+<ul>
+<li>ifup eth0 开启eth0网卡</li>
+</ul>
+<h4 id="ifdown">ifdown</h4>
+<ul>
+<li>ifdown eth0 关闭eth0网卡</li>
+</ul>
+<h4 id="netstat">netstat</h4>
+<ul>
+<li>netstat -at 列出所有 tcp 端口</li>
+<li>netstat -au 列出所有 udp 端口</li>
+<li>netstat -l 只显示监听端口</li>
+</ul>
+<h4 id="ss">ss</h4>
+<ul>
+<li>ss -t -a 显示所有tcp链接</li>
+<li>ss -l 显示处于监听状态的套接字</li>
+</ul>
+<h2 id="磁盘文件系统7个">磁盘&amp;文件系统（7个）</h2>
+<h4 id="mount">mount</h4>
+<ul>
+<li>mount /dev/hda1 /mnt 将/dev/hda1挂载到/mnt目录下</li>
+</ul>
+<h4 id="umount">umount</h4>
+<ul>
+<li>umount -v /mnt/mymount/ 卸载/mnt/mymount/</li>
+</ul>
+<h4 id="fsck">fsck</h4>
+<ul>
+<li>fsck -y /dev/hda2 检查并修复Linux文件系统</li>
+</ul>
+<h4 id="dumpe2fs">dumpe2fs</h4>
+<ul>
+<li>dumpe2fs /dev/hda1 查看文件系统信息</li>
+</ul>
+<h4 id="dump">dump</h4>
+<ul>
+<li>‍dump -0u -f /tmp/homeback.bak /home<br>
+将/home目录所有内容备份到/tmp/homeback.bak文件中，备份层级为0并在/etc/dumpdates中记录相关信息</li>
+</ul>
+<h4 id="fdisk">fdisk</h4>
+<ul>
+<li>fdisk /dev/sdb
+输入m列出可以执行的命令<br>
+输入p列出磁盘目前的分区情况<br>
+输入d然后选择分区，删除现有分区<br>
+输入print查看分区情况，确认分区已经删除<br>
+输入n建立新的磁盘分区<br>
+输入w最后对分区操作进行保存</li>
+</ul>
+<h4 id="mkfs">mkfs</h4>
+<ul>
+<li>mkfs -t ext3 /dev/sda6     将sda6分区格式化为ext3格式</li>
+</ul>
+<h2 id="系统权限3个">系统权限（3个）</h2>
+<h4 id="chmod">chmod</h4>
+<ul>
+<li>chmod 777 file1 修改file1文件权限为777</li>
+<li>chmod u+x,g+w file1 为file1设置自己可以执行，组员可以写入的权限</li>
+</ul>
+<h4 id="chown">chown</h4>
+<ul>
+<li>chown -R root /usr/meng 修改将目录/usr/meng及其下面的所有文件、子目录的文件主改成 root</li>
+</ul>
+<h4 id="chgrp">chgrp</h4>
+<ul>
+<li>chgrp -R mengxin /usr/meng 将/usr/meng及其子目录下的所有文件的用户组改为mengxin</li>
+</ul>
+<h2 id="关机重启5个">关机重启（5个）</h2>
+<h4 id="shutdown">shutdown</h4>
+<ul>
+<li>shutdown -h now 立即关机</li>
+<li>shutdown +5 &quot;System will shutdown after 5 minutes&quot; 指定5分钟后关机，同时送出警告信息给登入用户</li>
+</ul>
+<h4 id="halt">halt</h4>
+<ul>
+<li>halt -p     关闭系统后关闭电源</li>
+<li>halt -d     关闭系统，但不留下纪录</li>
+</ul>
+<h4 id="poweroff">poweroff</h4>
+<ul>
+<li>poweroff -f 强制关闭操作系统</li>
+</ul>
+<h4 id="logout">logout</h4>
+<ul>
+<li>logout 退出当前登录的Shell</li>
+</ul>
+<h4 id="exit">exit</h4>
+<ul>
+<li>exit 退出当前登录的Shell</li>
+</ul>
+<h2 id="其他6个">其他（6个）</h2>
+<h4 id="echo">echo</h4>
+<ul>
+<li>echo 'hello' 打印字符串、变量</li>
+</ul>
+<h4 id="print">print</h4>
+<ul>
+<li>printf 'hell0' 格式化输出字符串</li>
+</ul>
+<h4 id="rpm">rpm</h4>
+<ul>
+<li>rpm -ivh your-package.rpm 安装rpm包</li>
+<li>rpm -Uvh your-package.rpm 升级rpm包</li>
+<li>rpm -e package 卸载</li>
+<li>rpm -qa 列出所有安装过的包</li>
+<li>rpm -ql 包名 rpm包中的文件安装到那里去</li>
+</ul>
+<h4 id="yum">yum</h4>
+<ul>
+<li>yum install php 安装php</li>
+<li>yum remove php 卸载php</li>
+</ul>
+<h4 id="clear">clear</h4>
+<ul>
+<li>clear  清屏</li>
+</ul>
+<h4 id="history">history</h4>
+<ul>
+<li>history 10 最近使用的10条历史命令</li>
+</ul>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sanmusir.github.io//post/ei0k2ytl2">
+              <h3 class="post-title">
+                带着小白了解下区块链技术
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '88f87c3faea053b3ce07',
+    clientSecret: '11c8cff739a25a6a99fe78bfa3681b1c70c92199',
+    repo: 'sanmusir.github.io',
+    owner: 'sanmusir',
+    admin: ['sanmusir'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  到底了，别拉了！ | 
+  <a class="rss" href="https://sanmusir.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
