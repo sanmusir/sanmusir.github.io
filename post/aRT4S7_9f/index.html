@@ -1,0 +1,299 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Git基础使用 | Sanmu</title>
+<link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1559548721287">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://sanmusir.github.io//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141209894-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141209894-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://sanmusir.github.io/">
+  <img class="avatar" src="https://sanmusir.github.io//images/avatar.png?v=1559548721287" alt="">
+  </a>
+  <h1 class="site-title">
+    Sanmu
+  </h1>
+  <p class="site-description">
+    做人呢最重要的是要有💰
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://sanmusir.github.io//post/xLG74J2kC/" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/sanmusir" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Git基础使用
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-06-03 ·
+              </time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://images.unsplash.com/photo-1531030874896-fdef6826f2f7?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60')">
+              </div>
+            
+            <div class="post-content">
+              <h2 id="git基础使用">Git基础使用</h2>
+<h3 id="前言">前言</h3>
+<p>Git是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有事务。
+目前很多大小公司都在使用Git作为代码的管理工具,所以作为一名开发者来说,Git是一项必须掌握的技能。</p>
+<h3 id="安装">安装</h3>
+<p>详细安装请参照<a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git安装</a>，本文不在赘述。</p>
+<h3 id="基本操作">基本操作</h3>
+<ul>
+<li>Git安装完成后，在项目根目录下使用</li>
+</ul>
+<pre><code>git init
+</code></pre>
+<p>即可初始化项目的Git仓库。</p>
+<ul>
+<li>将工作区文件添加到暂存区
+使用</li>
+</ul>
+<pre><code>git add -A
+</code></pre>
+<ul>
+<li>将暂存区文件添加到仓库</li>
+</ul>
+<pre><code>git commit -m '备注'
+</code></pre>
+<p>通过上面3步我们就完成了Git最最简单的一个工作流程。这里面涉及到工作区、暂存区和仓库的概念，接下来我们将通过这3个概念来揭示Git工作流程。</p>
+<ul>
+<li>
+<p>工作区（Working Directory）
+就是你当前能看到可以操作的目录</p>
+</li>
+<li>
+<p>版本库（Repository）
+工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
+Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。
+<img src="https://www.liaoxuefeng.com/files/attachments/919020037470528/0"/>
+分支和HEAD的概念稍后会讲到。</p>
+</li>
+</ul>
+<p>前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
+<p>第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
+<p>第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
+<p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。</p>
+<p>你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<p>查看工作区和暂存区的状态</p>
+<pre><code>git status
+</code></pre>
+<p>查看commit提交日志</p>
+<pre><code>git log
+</code></pre>
+<p>查看commit提交日志（包括已经被删除的 commit 记录和 reset 的操作）</p>
+<pre><code>git reflog
+</code></pre>
+<p>回退到上一个commit版本</p>
+<pre><code>git reset --hard HEAD^
+</code></pre>
+<p>回退到指定commit版本</p>
+<pre><code>git reset --hard commit_id
+</code></pre>
+<p>撤销工作区已经修改过的文件</p>
+<pre><code>git checkout -- file
+</code></pre>
+<p>撤销已经提交到暂存区的文件</p>
+<pre><code>git reset HEAD &lt;file&gt;
+git checkout -- file
+</code></pre>
+<p>对比文件差异</p>
+<pre><code>git diff file
+</code></pre>
+<p>将文件添加到缓存区</p>
+<pre><code>git stash
+</code></pre>
+<p>将缓存区文件弹出到当前分支</p>
+<pre><code>git stash pop
+</code></pre>
+<h3 id="远程仓库">远程仓库</h3>
+<p>添加一个远程仓库</p>
+<pre><code>git remote add origin git@server-name:path/repo-name.git
+</code></pre>
+<p>推送代码</p>
+<pre><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程主机分支名&gt;
+</code></pre>
+<p>远程获取最新版本并merge到本地</p>
+<pre><code>git pull origin master
+</code></pre>
+<p>远程获取最新到本地，不会自动merge</p>
+<pre><code>git fetch orgin master
+</code></pre>
+<p>创建本地分支和远程分支的链接关系</p>
+<pre><code>git branch --set-upstream-to &lt;branch-name&gt; origin/&lt;branch-name&gt;
+</code></pre>
+<p>克隆仓库</p>
+<pre><code>git clone http|ssh
+</code></pre>
+<h3 id="分支管理">分支管理</h3>
+<p>查看所有分支</p>
+<pre><code>git branch -a
+</code></pre>
+<p>查看远程仓库</p>
+<pre><code>git remote -v
+</code></pre>
+<p>创建分支</p>
+<pre><code>git branch &lt;name&gt;
+</code></pre>
+<p>切换分支</p>
+<pre><code>git checkout &lt;name&gt;
+</code></pre>
+<p>创建+切换分支</p>
+<pre><code>git checkout -b &lt;name&gt;
+</code></pre>
+<p>合并某分支到当前分支</p>
+<pre><code>git merge &lt;name&gt;
+</code></pre>
+<p>删除分支</p>
+<pre><code>git branch -d &lt;name&gt;
+</code></pre>
+<p>强行删除</p>
+<pre><code>git branch -D &lt;name&gt;
+</code></pre>
+<h3 id="标签管理">标签管理</h3>
+<p>创建标签</p>
+<pre><code>git tag &lt;tagname&gt; commit id  默认是当前head
+</code></pre>
+<p>创建标签并备注</p>
+<pre><code>git tag -a &lt;tagname&gt; -m &quot;备注&quot;
+</code></pre>
+<p>查看标签</p>
+<pre><code>git tag
+</code></pre>
+<p>推送一个本地标签</p>
+<pre><code>git push origin &lt;tagname&gt;
+</code></pre>
+<p>推送全部未推送过的本地标签</p>
+<pre><code>git push origin --tags
+</code></pre>
+<p>删除一个本地标签</p>
+<pre><code>git tag -d &lt;tagname&gt;
+</code></pre>
+<p>删除一个远程标签</p>
+<pre><code>git push origin :refs/tags/&lt;tagname&gt;
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://sanmusir.github.io//post/pexbaLqwu">
+              <h3 class="post-title">
+                Mysql索引原理以及优化
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '88f87c3faea053b3ce07',
+    clientSecret: '11c8cff739a25a6a99fe78bfa3681b1c70c92199',
+    repo: 'sanmusir.github.io',
+    owner: 'sanmusir',
+    admin: ['sanmusir'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  到底了，别拉了(╯﹏╰) | 
+  <a class="rss" href="https://sanmusir.github.io//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
