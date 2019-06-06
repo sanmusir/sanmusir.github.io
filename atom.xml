@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sanmusir.github.io/</id>
     <title>Sanmu</title>
-    <updated>2019-06-05T06:45:41.443Z</updated>
+    <updated>2019-06-06T07:27:32.026Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sanmusir.github.io/"/>
     <link rel="self" href="https://sanmusir.github.io//atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://sanmusir.github.io//images/avatar.png</logo>
     <icon>https://sanmusir.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Sanmu</rights>
+    <entry>
+        <title type="html"><![CDATA[Laravel的中大型项目构架]]></title>
+        <id>https://sanmusir.github.io//post/683tH2IR5</id>
+        <link href="https://sanmusir.github.io//post/683tH2IR5">
+        </link>
+        <updated>2019-06-06T07:21:32.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mysql的主从配置]]></title>
         <id>https://sanmusir.github.io//post/IV_fXmt4N</id>
