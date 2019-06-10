@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Laravel的中大型项目构架 | Sanmu</title>
+<title>带你了解JS的 call 和 apply | Sanmu</title>
 <link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1560152947659">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -87,25 +87,61 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Laravel的中大型项目构架
+              带你了解JS的 call 和 apply
             </h2>
             <div class="post-info">
               <time class="post-time">
-                · 2019-06-06 ·
+                · 2019-06-10 ·
               </time>
               
-                <a href="https://sanmusir.github.io//tag/G12s7Gzp5" class="post-tag">
-                  # laravel
+                <a href="https://sanmusir.github.io//tag/MMXtd8JTk" class="post-tag">
+                  # JS
                 </a>
               
             </div>
             
-              <div class="post-feature-image" style="background-image: url('https://images.unsplash.com/photo-1499051775559-dcb9f02d2107?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80')">
+              <div class="post-feature-image" style="background-image: url('https://images.unsplash.com/photo-1557312309-a08700b45135?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1652&amp;q=80')">
               </div>
             
             <div class="post-content">
-              <h2 id="分享">分享</h2>
-<p><a href="http://www.sangeng.org/blog/index/detail/id/525.html">Laravel的中大型项目构架</a></p>
+              <h3 id="前言">前言</h3>
+<p>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。
+那么在 javascript 中，call 和 apply 就是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。</p>
+<h3 id="示例">示例</h3>
+<pre><code>function people() {}
+
+people.prototype = {
+	name: 'zhangsan',
+	say(){
+        console.log(`my name is ${this.name}`);
+	}
+}
+
+const zhangsan = new people;
+zhangsan.say();                              //my name is zhangsan
+</code></pre>
+<p>但是如果我们有一个对象李四 ,我们不想对它重新定义 say 方法，那么我们可以通过 call 或 apply 用 张三 的 say 方法：</p>
+<pre><code>lisi = {
+	name: 'lisi'
+}
+
+zhangsan.say.call(lisi);                  //my name is lisi
+zhangsan.say.apply(lisi);              //my name is lisi
+
+</code></pre>
+<p>所以，可以看出 call 和 apply 是为了动态改变 this 而出现的，当一个 object 没有某个方法（文中 lisi 没有say方法），但是其他的有（文中 zhangsan 有say方法），我们可以借助call或apply用其它对象的方法来操作。</p>
+<h3 id="区别">区别</h3>
+<p>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。<br>
+例如，有一个函数定义如下</p>
+<pre><code>var func = function(arg1, arg2) {
+     
+};
+</code></pre>
+<p>就可以通过如下方式来调用</p>
+<pre><code>func.call(this, arg1, arg2);
+func.apply(this, [arg1, arg2])
+</code></pre>
+<p>其中 this 是你想指定的上下文，他可以是任何一个 JavaScript 对象(JavaScript 中一切皆对象)，call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。</p>
 
             </div>
           </article>
@@ -114,9 +150,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://sanmusir.github.io//post/IV_fXmt4N">
+            <a href="https://sanmusir.github.io//post/683tH2IR5">
               <h3 class="post-title">
-                Mysql的主从配置
+                Laravel的中大型项目构架
               </h3>
             </a>
           </div>

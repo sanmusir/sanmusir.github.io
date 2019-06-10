@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sanmusir.github.io/</id>
     <title>Sanmu</title>
-    <updated>2019-06-06T07:28:26.057Z</updated>
+    <updated>2019-06-10T07:49:17.528Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sanmusir.github.io/"/>
     <link rel="self" href="https://sanmusir.github.io//atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://sanmusir.github.io//images/avatar.png</logo>
     <icon>https://sanmusir.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Sanmu</rights>
+    <entry>
+        <title type="html"><![CDATA[带你了解JS的 call 和 apply]]></title>
+        <id>https://sanmusir.github.io//post/tbEauRpRA</id>
+        <link href="https://sanmusir.github.io//post/tbEauRpRA">
+        </link>
+        <updated>2019-06-10T07:26:26.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Laravel的中大型项目构架]]></title>
         <id>https://sanmusir.github.io//post/683tH2IR5</id>
