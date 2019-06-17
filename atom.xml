@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sanmusir.github.io/</id>
     <title>Sanmu</title>
-    <updated>2019-06-12T10:54:59.109Z</updated>
+    <updated>2019-06-17T07:56:25.749Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sanmusir.github.io/"/>
     <link rel="self" href="https://sanmusir.github.io//atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://sanmusir.github.io//images/avatar.png</logo>
     <icon>https://sanmusir.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Sanmu</rights>
+    <entry>
+        <title type="html"><![CDATA[关于 PHP 不同数据类型在比较时该如何转化问题]]></title>
+        <id>https://sanmusir.github.io//post/-R1LfdFM9</id>
+        <link href="https://sanmusir.github.io//post/-R1LfdFM9">
+        </link>
+        <updated>2019-06-17T07:53:04.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于一篇文章引发的匿名函数的思考]]></title>
         <id>https://sanmusir.github.io//post/q7c9KG4C5</id>
@@ -72,12 +79,5 @@
         <link href="https://sanmusir.github.io//post/linux-command">
         </link>
         <updated>2019-05-31T10:06:12.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Laravel Excel 基础使用]]></title>
-        <id>https://sanmusir.github.io//post/laravel-excel</id>
-        <link href="https://sanmusir.github.io//post/laravel-excel">
-        </link>
-        <updated>2019-05-31T08:14:18.000Z</updated>
     </entry>
 </feed>
