@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>带着小白了解下区块链技术 | Sanmu</title>
-<link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1573639825518">
+<link rel="shortcut icon" href="https://sanmusir.github.io//favicon.ico?v=1585561664397">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://sanmusir.github.io//styles/main.css">
@@ -29,7 +29,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://sanmusir.github.io/">
-  <img class="avatar" src="https://sanmusir.github.io//images/avatar.png?v=1573639825518" alt="">
+  <img class="avatar" src="https://sanmusir.github.io//images/avatar.png?v=1585561664397" alt="">
   </a>
   <h1 class="site-title">
     Sanmu
@@ -115,43 +115,43 @@
 <p>法币的价值是由国家信用来支撑的，其本身并不存在任何价值，数字币也一样，需要有人认同才有价值，相对于法币来说，数字币的发行并不受国家管控，它的总量是固定的，所以不存在发生通货膨胀可能，认同数字币的人越多，那么它的价值就越高。</p>
 <h3 id="区块链实现技术">区块链实现技术</h3>
 <h4 id="账本ledger">账本（Ledger）</h4>
-<p>区块链中所有的交易记录在账本中。
-首先我们来了解下什么是账本，举个栗子：
+<p>区块链中所有的交易记录在账本中。<br>
+首先我们来了解下什么是账本，举个栗子：<br>
 假如你经常和你的同事一起出去吃饭，每次吃完饭总有一个人把钱都付了，那么你就得记住你欠了张三多少钱，下次换成你付钱的时候，就换成张三记录欠了你多少钱，这样我们把所有的都记录下来，就形成了一个账本。</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/ENbq9qGCEM.gif!large" alt="账本"></p>
-<p>我们只需要月底的时候清算一次即可。
-那么问题来了，既然大家都可以往账本添加记录行，是否我可以未经过张三允许，私自在账本上添加 张三 付给 我 ¥100 呢？
+<figure data-type="image" tabindex="1"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/ENbq9qGCEM.gif!large" alt="账本"></figure>
+<p>我们只需要月底的时候清算一次即可。<br>
+那么问题来了，既然大家都可以往账本添加记录行，是否我可以未经过张三允许，私自在账本上添加 张三 付给 我 ¥100 呢？<br>
 答案是否定的，如何实现，请往下看。</p>
 <h4 id="数字签名">数字签名</h4>
 <p>现实世界中，一张支票是否有效，银行是根据支票上面的签名来判断的。那么在区块链的世界中，我们同样也可以使用数字签名来实现交易记录的有效性。我们可以在每次交易上，加上自己的数字签名，别人模仿不了，从而确定了交易是由本人发出的，而不是特意伪造的。</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/4VmwOl7Tfn.png!large" alt="签名"></p>
-<p>那么是数字签名，它又是怎么实现的呢？
-数字签名涉及到2个概念：公钥 and 私钥
+<figure data-type="image" tabindex="2"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/4VmwOl7Tfn.png!large" alt="签名"></figure>
+<p>那么是数字签名，它又是怎么实现的呢？<br>
+数字签名涉及到2个概念：公钥 and 私钥<br>
 张三有两把钥匙，一把是公钥，另一把是私钥，私钥是自己保存的，公钥是给别人的。</p>
-<p>用公钥加密过的数据，只能用私钥解开：
-数据 + 公钥 = 乱码 + 私钥 =  数据
-私钥加密过的数据，公钥可以解开：
+<p>用公钥加密过的数据，只能用私钥解开：<br>
+数据 + 公钥 = 乱码 + 私钥 =  数据<br>
+私钥加密过的数据，公钥可以解开：<br>
 数据 + 私钥 = 乱码 + 公钥 = 数据</p>
-<p>张三需要用自己的私钥对交易记录进行加密，其他人只需要使用他的公钥去解密，就能确认这条交易记录确实是张三发出的。
+<p>张三需要用自己的私钥对交易记录进行加密，其他人只需要使用他的公钥去解密，就能确认这条交易记录确实是张三发出的。<br>
 假设李四想冒充张三，由于没有张三的私钥，所以李四使用自己的私钥发出的数据并不能被张三公钥解密，交易不被确认。</p>
 <h4 id="货币">货币</h4>
 <p>货币的实体是交易的历史记录。</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/idwOVUmGSI.png!large" alt="货币"></p>
-<p>区块链中你的账户余额并不是我们通常理解的钱包里有多少钱，而是通过计算历史的交易记录得出来的。
+<figure data-type="image" tabindex="3"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/idwOVUmGSI.png!large" alt="货币"></figure>
+<p>区块链中你的账户余额并不是我们通常理解的钱包里有多少钱，而是通过计算历史的交易记录得出来的。<br>
 你有多少钱才能花多少，确保不可超支，这就需要每次交易的时候，清算账目上所有的交易记录，计算出目前你的余额，当余额小于本次交易所需开销时，本次交易失败。</p>
 <h4 id="工作量证明">工作量证明</h4>
 <p>为了去中心化，区块链中所有的节点都会维护同一个账本。当一个交易被执行时，如 张三给李四 ¥100 ，那么张三会把这条消息广播出去，与此同时节点上的其他人也同样发生着其他交易，如何确保其他节点承认这笔交易，以及交易的顺序，区块链中使用工作量证明来解决这个问题。</p>
-<p>在讲工作量证明之前，我们先来了解下哈希函数。
+<p>在讲工作量证明之前，我们先来了解下哈希函数。<br>
 SHA256函数能将任意输入（包括文件）转为化256位的01比特串，俗称摘要。只要输入稍微改变，结果就会完全不同，且无法逆推。</p>
-<p><img src="http://rabbitmm.com/wp-content/uploads/2018/04/QQ%E6%88%AA%E5%9B%BE20180409224830-768x309.png" alt="工作量"></p>
-<p>工作量证明如何运作：
+<figure data-type="image" tabindex="4"><img src="http://rabbitmm.com/wp-content/uploads/2018/04/QQ%E6%88%AA%E5%9B%BE20180409224830-768x309.png" alt="工作量"></figure>
+<p>工作量证明如何运作：<br>
 首先每个节点都会把这段时间广播收到的交易记录加上一串随机的数字形成一个区块，然后用SHA256去计算这个区块的摘要</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/4LUCeHwoQR.png!large" alt="工作量"></p>
+<figure data-type="image" tabindex="5"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/4LUCeHwoQR.png!large" alt="工作量"></figure>
 <p>只要有一个节点找到摘要前30位都为0时，该节点就可以向其他节点发送此区块，其他节点收到此区块就更新自己的区块，并重新开始计算新的交易记录，目前比特币设计大概每10分钟记录一个区块，随着算力的提升，系统通过增加摘要0的个数来维持10分钟平衡。</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/X2hUcXiAP0.png!large" alt="time"></p>
+<figure data-type="image" tabindex="6"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/X2hUcXiAP0.png!large" alt="time"></figure>
 <p>由于SHA256出来的结果是随机的，所以想要得到前30位都为0的摘要信息只能通过改变随机数进行大量的计算，这就是工作量证明。</p>
 <p>如何确认交易顺序呢，我们只需要将前一个区块的摘要放入到本次的计算中去，这样就确保了交易的顺序</p>
-<p><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/RKaTDBHET7.png!large" alt="交易顺序"></p>
+<figure data-type="image" tabindex="7"><img src="https://iocaffcdn.phphub.org/uploads/images/201905/31/23085/RKaTDBHET7.png!large" alt="交易顺序"></figure>
 <p>这些区块一个连着一个，就像一条链一样，区块链的名字就是这么来的。</p>
 <p>为了奖励区块发现者的工作，当他发送区块时，系统会在区块的交易记录上添加一个特殊的记录：张三 获得 ¥100，这就是比特币的来源。当然这个奖励会随着时间的增长而成倍减少，比特币的总量是2100万个，最开始每开采一个区块奖励50个，四年减半一次，目前是12.5个。</p>
 <h4 id="前景展望">前景展望</h4>
