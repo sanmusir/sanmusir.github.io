@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://sanmusir.github.io/</id>
     <title>Sanmu</title>
-    <updated>2020-03-31T09:49:49.587Z</updated>
+    <updated>2020-03-31T09:54:10.881Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://sanmusir.github.io/"/>
     <link rel="self" href="https://sanmusir.github.io//atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://sanmusir.github.io//images/avatar.png</logo>
     <icon>https://sanmusir.github.io//favicon.ico</icon>
     <rights>All rights reserved 2020, Sanmu</rights>
+    <entry>
+        <title type="html"><![CDATA[Go defer ]]></title>
+        <id>https://sanmusir.github.io//post/Ln71KiDM1</id>
+        <link href="https://sanmusir.github.io//post/Ln71KiDM1">
+        </link>
+        <updated>2020-03-31T09:44:15.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Vim 的技巧]]></title>
         <id>https://sanmusir.github.io//post/vim-skill</id>
@@ -72,12 +79,5 @@
         <link href="https://sanmusir.github.io//post/pexbaLqwu">
         </link>
         <updated>2019-06-03T02:39:19.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[带着小白了解下区块链技术]]></title>
-        <id>https://sanmusir.github.io//post/blockchain</id>
-        <link href="https://sanmusir.github.io//post/blockchain">
-        </link>
-        <updated>2019-05-31T10:29:10.000Z</updated>
     </entry>
 </feed>
